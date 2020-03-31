@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The favorites that belong to the user.
+     */
+    public function favorites()
+    {
+        return $this->belongsToMany('App\Song', 'user_song_favorites');
+    }
 }
