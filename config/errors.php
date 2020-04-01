@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'reg400' => 'Bad Request',
     'reg401' => 'Unauthorized',
 
     'cat404' => 'Category can not found by given id',

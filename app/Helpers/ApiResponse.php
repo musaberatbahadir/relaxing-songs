@@ -31,12 +31,13 @@ class ApiResponse
 
     /**
      * @param Error $error
+     * @param array $data
      * @return static
      */
-    public static function error(Error $error)
+    public static function error(Error $error, $data = [])
     {
         Log::error('Returned Error for', $error->jsonSerialize());
-        return response()->json(new static('', [$error]));
+        return response()->json(new static($data, [$error]));
     }
 
     /**
